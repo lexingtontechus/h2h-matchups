@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function PlayerList({ fontColor, bgColor, teamKey }) {
   const data = await fetch(
     `https://api.sportsdata.io/v3/nba/scores/json/Players/${teamKey}?key=${process.env.API_KEY}`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 60 } },
   );
 
   const res = await data.json();
@@ -14,6 +14,7 @@ export default async function PlayerList({ fontColor, bgColor, teamKey }) {
       Current roster
       {res.map((player) => (
         <div
+          key={player.PlayerID}
           className="flex flex-col items-center text-center rounded  p-2.5"
           style={{ color: `#${fontColor}`, backgroundColor: `#${bgColor}` }}
         >
