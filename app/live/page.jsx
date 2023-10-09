@@ -1,6 +1,10 @@
-import React from "react";
 import Team from "./Team";
 
+export const metadata = {
+  title: {
+    default: "Live Games",
+  },
+};
 async function page() {
   const data = await fetch(
     `https://api.sportsdata.io/v3/nba/scores/json/Games/2023?key=${process.env.API_KEY}`,

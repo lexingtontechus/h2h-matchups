@@ -5,9 +5,9 @@ export default function TeamList({ teamInfo }) {
   // console.log(teamInfo);
   return (
     <div className="flex justify-between items-center w-2/4">
-      <div className="flex-1 p-3">
+      <div className="mx-auto p-4">
         <Link href={`/${teamInfo.TeamID}`}>
-          <Image src={teamInfo.WikipediaLogoUrl} width={1000} height={1000} />
+          <Image src={teamInfo.WikipediaLogoUrl} width={150} height={150} />
         </Link>
       </div>
       {/* <div className="flex-1 p-3">

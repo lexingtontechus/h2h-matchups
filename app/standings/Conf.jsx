@@ -30,7 +30,7 @@ import Link from "next/link";
 async function Conf({ c }) {
   const data = await fetch(
     `https://api.sportsdata.io/v3/nba/scores/json/Standings/2023?key=${process.env.API_KEY}`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 60 } },
   );
   const res = await data.json();
 
@@ -41,7 +41,7 @@ async function Conf({ c }) {
   return (
     <div className="mb-5">
       <h2 className="text-2xl mb-5 text-start">{c} Conference</h2>
-      <table className="w-full">
+      <table className="table table-zebra table-pin-rows w-full">
         <thead>
           <tr className="flex justify-between border-b py-2">
             <th>Team</th>
