@@ -320,7 +320,7 @@ export default function H2HStats() {
         </thead>
         <tbody>
           {h2hstats.map((item) => (
-            <tr key={item.Rk}>
+            <tr key={item.Rk} className="bg-accent">
               <th>{item.Rk}</th>
               <td>{item.Player}</td>
               <td>{item.Team}</td>

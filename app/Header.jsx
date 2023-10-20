@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 import {
   Navbar,
   NavbarMenuToggle,
@@ -15,6 +16,7 @@ import {
   Dropdown,
   DropdownMenu,
 } from "@nextui-org/react";
+
 import {
   ChevronDown,
   Lock,
@@ -24,6 +26,7 @@ import {
   TagUser,
   Scale,
   NBA,
+  WNBA,
 } from "./Icons.jsx";
 
 export default function Header() {
@@ -31,6 +34,7 @@ export default function Header() {
 
   const menuItems = [
     { name: "NBA", url: "nba" },
+    { name: "WNBA", url: "wnba" },
     { name: "NFL", url: "nfl" },
     { name: "CFB", url: "cfb" },
   ];
@@ -46,6 +50,7 @@ export default function Header() {
     server: <Server className="text-success" fill="currentColor" size={30} />,
     user: <TagUser className="text-danger" fill="currentColor" size={30} />,
     nba: <NBA className="text-danger" fill="currentColor" size={30} />,
+    wnba: <WNBA className="text-danger" fill="currentColor" size={30} />,
   };
 
   return (
@@ -88,6 +93,74 @@ export default function Header() {
               key="live"
               description="Live Games Box Scores."
               startContent={icons.nba}
+            >
+              <Link color="foreground" href="/nba/live">
+                Live
+              </Link>
+            </DropdownItem>
+            <DropdownItem
+              key="h2h"
+              description="Head To Head MatchUp"
+              startContent={icons.flash}
+            >
+              <Link color="foreground" href="/nba/h2h">
+                Head To Head
+              </Link>
+            </DropdownItem>
+            <DropdownItem
+              key="standings"
+              description="League Standings."
+              startContent={icons.activity}
+            >
+              <Link color="foreground" href="/nba/standings">
+                Standings
+              </Link>
+            </DropdownItem>
+            <DropdownItem
+              key="Teams"
+              description="Team Rosters."
+              startContent={icons.user}
+            >
+              <Link color="foreground" href="/nba/rosters">
+                Teams
+              </Link>
+            </DropdownItem>
+            <DropdownItem
+              key="news"
+              description="Latest NBA News."
+              startContent={icons.server}
+            >
+              <Link color="foreground" href="/nba/news">
+                News
+              </Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                WNBA
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="WNBA"
+            className="w-[340px]"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            <DropdownItem
+              key="live"
+              description="Live Games Box Scores."
+              startContent={icons.wnba}
             >
               <Link color="foreground" href="/nba/live">
                 Live

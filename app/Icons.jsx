@@ -12,6 +12,17 @@ export const NBA = ({ fill, size, height, width, ...props }) => {
   );
 };
 
+export const WNBA = ({ fill, size, height, width, ...props }) => {
+  return (
+    <Image
+      width={size || width || 24}
+      height={size || height || 24}
+      className="bg-transparent"
+      src="/wnba-logo2.png"
+    />
+  );
+};
+
 export const ChevronDown = ({ fill, size, height, width, ...props }) => {
   return (
     <svg
